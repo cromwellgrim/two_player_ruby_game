@@ -1,7 +1,19 @@
-# player 1 puts a question
-# player 2 answers the question
-# if answered wrong player loses a life
-# prints ------- NEW TURN -------
-# once a player loses all lives the game ends
-
 class Player
+  attr_accessor :lives
+  attr_reader :name, :player
+
+  def initialize(player)
+    @lives = 3
+    @player = player
+    @name = player
+  end
+
+  def life_down
+    self.lives -= 1
+  end
+
+  def alive?
+    self.lives > 0
+  end
+
+end
